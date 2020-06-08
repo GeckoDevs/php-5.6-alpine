@@ -73,6 +73,11 @@ RUN apk add --update --no-cache bash \
 
 RUN apk add --update --no-cache imagemagick-dev \
 				ffmpeg
+
+# Missing us-ascii//TRANSLIT
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted gnu-libiconv
+ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
+
 #RUN ln -s /usr/bin/php5 /usr/bin/php
 RUN curl -sS https://getcomposer.org/installer | php5 -- --install-dir=/usr/bin --filename=composer 
 
