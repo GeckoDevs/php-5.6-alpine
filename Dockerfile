@@ -82,8 +82,8 @@ RUN  rm -rf /var/cache/apk/*
 RUN sed -i '264s#AllowOverride None#AllowOverride All#' /etc/apache2/httpd.conf
 #Rewrite Moduble Enable
 RUN sed -i 's#\#LoadModule rewrite_module modules/mod_rewrite.so#LoadModule rewrite_module modules/mod_rewrite.so#' /etc/apache2/httpd.conf
-# Document Root to /var/www/html/
-RUN sed -i 's#/var/www/localhost/htdocs#/var/www/html#g' /etc/apache2/httpd.conf
+# Document Root to /var/www/html/public_html
+RUN sed -i 's#/var/www/localhost/htdocs#/var/www/html/public_html#g' /etc/apache2/httpd.conf
 #Start apache
 RUN mkdir -p /run/apache2
 
