@@ -1,5 +1,5 @@
 FROM alpine:3.5
-MAINTAINER Arvind Rawat <arvindr226@gmail.com>
+MAINTAINER Jose Gomez <jose@geckodevs.es>
 
 RUN apk add --update --no-cache bash \
 				curl \
